@@ -244,6 +244,13 @@ export default function App() {
                 <h3 className="text-2xl font-serif italic font-black">{p.name}</h3>
                 {p.id === 1 && <div className="flex items-center gap-1 text-[#8B4513] text-[10px] font-black mt-2 uppercase tracking-widest"><Star className="w-3 h-3 fill-current"/> המומלץ שלנו</div>}
                 <p className="text-slate-500 text-sm mt-4 leading-relaxed flex-1">{p.description}</p>
+                {p.category === "ללא גלוטן" && (
+                  <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-xl">
+                    <p className="text-[10px] text-red-600 font-bold leading-tight">
+                      שימו לב: אנחנו עושים כל מה שאפשר על מנת להפריד, אך המטבח אינו סטרילי מגלוטן.
+                    </p>
+                  </div>
+                )}
                 <button onClick={() => { setCustomizingProduct(p); setSelectedAddOns([]); }} className="w-full bg-[#8B4513] text-white py-5 rounded-2xl mt-10 font-black text-xs uppercase tracking-widest shadow-lg shadow-[#8B4513]/20">הוסף לסל</button>
               </div>
             </div>
@@ -322,6 +329,13 @@ export default function App() {
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setCustomizingProduct(null)} />
             <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 100, opacity: 0 }} className="relative bg-white w-full max-w-lg rounded-[3.5rem] p-12 shadow-2xl">
               <h3 className="text-3xl font-serif italic font-black mb-8 text-center">תוספות ל{customizingProduct.name}</h3>
+              {customizingProduct.category === "ללא גלוטן" && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-100 rounded-2xl">
+                  <p className="text-xs text-red-600 font-bold text-center">
+                    שימו לב: המטבח אינו סטרילי מגלוטן.
+                  </p>
+                </div>
+              )}
               <div className="space-y-4">
                 {ADD_ONS.map(a => (
                   <button key={a.id} onClick={() => toggleAddOn(a.id)} className={`w-full p-5 rounded-2xl border-2 flex justify-between items-center transition-all ${selectedAddOns.includes(a.id) ? 'border-[#8B4513] bg-[#8B4513]/5' : 'border-slate-100'}`}>
@@ -374,6 +388,10 @@ export default function App() {
                   <div className="flex justify-between mb-8 font-black text-2xl">
                     <span>סה"כ:</span>
                     <span className="text-[#8B4513]">₪{getCartTotal()}</span>
+                  </div>
+                  <div className="mb-6 p-3 bg-slate-50 rounded-xl flex items-center gap-2">
+                    <ReceiptText className="w-4 h-4 text-[#8B4513]" />
+                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">תשלום ב-Bit או Paybox</span>
                   </div>
                   <button onClick={sendWhatsApp} className="w-full bg-[#8B4513] text-white py-6 rounded-2xl font-black text-lg shadow-xl">הזמן עכשיו בוואצאפ</button>
                 </div>
