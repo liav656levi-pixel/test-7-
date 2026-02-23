@@ -16,3 +16,7 @@
 .glass {
   @apply backdrop-blur-md bg-white/70 border border-white/20;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
