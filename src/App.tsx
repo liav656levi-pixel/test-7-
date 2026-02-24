@@ -831,7 +831,7 @@ export default function App() {
                     </div>
                     <div className="flex gap-3">
                       <a 
-                        href="https://waze.com/ul?ll=31.8219,34.8291&navigate=yes" 
+                        href="https://waze.com/ul?q=צרכניית%20קדרון&navigate=yes" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-[10px] font-black uppercase tracking-widest bg-primary/10 text-primary px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all"
@@ -839,7 +839,7 @@ export default function App() {
                         Waze
                       </a>
                       <a 
-                        href="https://www.google.com/maps/search/?api=1&query=מושב+קדרון" 
+                        href="https://www.google.com/maps/search/?api=1&query=צרכניית+קדרון" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-[10px] font-black uppercase tracking-widest bg-primary/10 text-primary px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all"
@@ -880,60 +880,6 @@ export default function App() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-white dark:bg-black/20 border-t border-primary/10 py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="text-6xl sm:text-8xl font-black tracking-tighter uppercase mb-4 opacity-10">Sabrosa</h2>
-            <div className="flex flex-col items-center">
-              <h3 className="text-2xl font-black tracking-tighter uppercase leading-none">Sabrosa</h3>
-              <span className="text-[8px] font-black uppercase tracking-[0.4em] text-primary mt-1">Artisan Bakery</span>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 pt-12 border-t border-primary/5">
-            <div className="text-center sm:text-right">
-              <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-4">ניווט</h4>
-              <ul className="space-y-2 text-sm font-bold">
-                <li><button onClick={(e) => smoothScroll(e, 'about')} className="hover:text-primary transition-colors">הסיפור שלנו</button></li>
-                <li><button onClick={(e) => smoothScroll(e, 'menu')} className="hover:text-primary transition-colors">התפריט שלנו</button></li>
-                <li><button onClick={(e) => smoothScroll(e, 'contact')} className="hover:text-primary transition-colors">צור קשר</button></li>
-              </ul>
-            </div>
-            
-            <div className="text-center">
-              <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-4">שעות פעילות</h4>
-              <div className="text-sm font-bold space-y-1">
-                <p>חמישי: 17:00 - 21:00</p>
-                <p>שישי: 08:00 - 12:00</p>
-              </div>
-            </div>
-            
-            <div className="text-center sm:text-left">
-              <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-4">חברתי</h4>
-              <div className="flex justify-center sm:justify-start gap-4">
-                <a href="https://instagram.com/liavbakery" target="_blank" rel="noopener noreferrer" className="p-2 bg-primary/5 rounded-xl hover:bg-primary hover:text-white transition-all">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="tel:0555567714" className="p-2 bg-primary/5 rounded-xl hover:bg-primary hover:text-white transition-all">
-                  <Phone className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-20 pt-8 border-t border-primary/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">
-              © {new Date().getFullYear()} Sabrosa Artisan Bakery. כל הזכויות שמורות.
-            </p>
-            <div className="flex gap-6">
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">מושב קדרון</span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">055-5567714</span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
